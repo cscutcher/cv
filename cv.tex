@@ -1,0 +1,287 @@
+% cv-us.tex
+% $Id: cv-us.tex,v 1.28 2006/12/12 22:53:52 jrblevin Exp $
+%
+% LaTeX Curriculum Vitae Template
+%
+% Copyright (C) 2004-2006 Jason Blevins
+%
+% You may use use this document as a template to create your own CV
+% and you may redistribute the source code freely. No attribution is
+% required in any resulting documents, however, I do ask that you
+% please leave this notice and the above URL in the source code if you
+% choose to redistribute this file.
+%
+% Jason R. Blevins <jrblevin@sdf.lonestar.org>
+% http://jrblevin.freeshell.org
+% Durham, December 12, 2006
+%
+%%---------------------------------------------------------------------------%
+%
+% Notes:
+%
+% * Don't forget to change `pdfauthor' and `keywords' in the \hypersetup
+%   section below.
+%
+% * To create a new page use: \newpage \opening
+%
+% * res.cls includes an \address{} command which can be used up to twice,
+%   but my address is too long for the format it uses.
+%
+% * Alternate documentclass statement to put headings in margin:
+%   \documentclass[margin,line,11pt,final]{res}
+%
+% * Can divide publication/presentation list into subsections by year:
+%   \section{\bf\small\hspace{8mm}2006}
+%
+%%----------------------------------------------------------------------------%
+
+\documentclass[overlapped,line,letterpaper]{res}
+
+\usepackage{ifpdf}
+\usepackage{cs-cv}
+
+\ifpdf
+  \usepackage[pdftex]{hyperref}
+\else
+  \usepackage[hypertex]{hyperref}
+\fi
+
+\usepackage{tabulary}
+
+\hypersetup{
+  letterpaper,
+  colorlinks,
+  urlcolor=black,
+  pdfpagemode=none,
+  pdftitle={Curriculum Vitae},
+  pdfauthor={Chris Scutcher},
+  pdfcreator={$ $Id: cv-us.tex,v 1.28 2006/12/12 22:53:52 cscutcher Exp $ $},
+  pdfsubject={Curriculum Vitae},
+  pdfkeywords={linux unix ldra c++ python php c embedded pervasive open source}
+}
+
+%%===========================================================================%%
+
+\begin{document}
+
+%---------------------------------------------------------------------------
+% Document Specific Customizations
+
+% Make lists without bullets and with no indentation
+\setlength{\leftmargini}{0em}
+\setlength{\leftmargin}{1.5cm}
+\setlength{\rightmargin}{1.5cm}
+\setlength{\textheight}{800pt}
+\setlength{\voffset}{-0.5in}
+\renewcommand{\labelitemi}{}
+
+% Use large bold font for printed name at top of pages
+\renewcommand{\namefont}{\large\textbf}
+
+%---------------------------------------------------------------------------
+
+\name{Chris D. Scutcher}
+
+\begin{resume}
+
+\begin{ncolumn}{2}  
+  Phone: +44 7743 186526                & Date of Birth: 22/10/1986 \\		        
+  {\tt chris.scutcher@ninebysix.co.uk}  & {\tt \verb+http://www.ninebysix.co.uk/+} 
+\end{ncolumn}
+
+%---------------------------------------------------------------------------
+
+\section{\bf Education}
+MEng Digital Systems Engineering / Computer Engineering, University of 
+Southampton, expected 2010
+
+A-Level , BETHS Grammar School, 2005						\\ 
+\hspace*{1cm} 
+\begin{tabulary}{\textwidth}{p{4cm}p{0.5cm}p{4cm}p{0.5cm}}					   
+Mathematics	&	B	&	Business Studies (AS)	&	B	\\ 
+Electronics	&	A	&	Computing		&	A	\\ 
+		&		&	General Studies		&	A	\\ 
+\end{tabulary}
+
+GCSE , BETHS Grammar School, 2003	- 14 A/A* - 2  B
+
+
+%---------------------------------------------------------------------------
+% \begin{format}
+% \title{l}\dates{r}\\
+% \employer{l}\location{r}\\ 
+% \body\\
+% \end{format}
+
+\section{\bf Employment}
+\csposition{Critical Software Technologies Ltd}{Engineer}{2008 - 2010}
+{
+    Involved in numerous safety critical projects. Currently managing SHARE; 
+    Sharing open source software middleware to improve industry competitiveness
+    in the embedded systems domain. Interacting with the international SHARE 
+    consortium.
+}
+
+\csposition{Electron Dynamics}{Engineer}{2008}
+{
+    Design and development of replacement company website using PHP5, Drupal and
+    MySQL.
+    Develop use of open source technologies within the company.
+}
+
+\csposition{NXP Semiconductors}{Research Development Engineer}{2007}
+{
+    Research, development and implementation of Linux DirectFB based GUI front end
+    for IP-Set top box (STB810 , STB225). Development and implementation of remote
+    working method, trialled with engineers on-site in China.
+}
+
+\csposition{Structuretone PLC}{Assistant IT Manager}{ 2005 - 2006 }
+{
+    Administrator and in-house developer [ Part-time ]
+}
+
+
+\section{\bf Project Experience}
+\csproject{SHARE; Sharing open source software middleware to improve industry %
+  competitiveness in the embedded systems domain.}
+  {Critical Software Technologies Ltd}
+  {2008-2009}
+{
+    Aims to facilitate open source software code sharing and utilisation within 
+    the embedded system domain, creating a nurturing environment for 
+    applications and solutions to be developed on OSS middleware, paving the way
+    for new business models and services. 
+    SHARE is an international project made up of a consortium of companies.
+}
+
+\csproject{Open Source Safety Certified Toolchain}
+  {Critical Software Technologies Ltd}
+  {2009}
+{ 
+    The project is intended to help design a end-to-end toolchain to produce 
+    certifiable safety-critical software. 
+    It will make use of open source software, safety standards (such as the 
+    DO-178B) to produce a automated process that supports the development 
+    lifecycle, from concept through requirements management to in service 
+    upgrade. 
+}
+
+\csproject{Colony Project}{University of Southampton}{2007}
+{
+    Innovative open-source strategy game making use of real life stigmergetic 
+    and emergent agent-based processes written in C++ using Ogre3D engine for a 
+    Linux platform. [ Third year project ]
+}
+
+\csproject{NXPerience GUI}{NXP}{2007}
+{ 
+    Development and implementation of innovative embedded GUI for IP-TV using 
+    DirectFB, C, C++ on a Linux platform.
+}
+
+\csproject{Linux tablet support}{}{2006}
+{ 
+    Open-source technologies for tablet based computers on Linux platform. 
+}
+
+\csproject{Underwater Telecommunication Network Branching Unit Demonstrator}
+  {Engineering Education Scheme}
+  {2005}
+{
+    Led team in Engineering Education Scheme arranged by the Royal Academy of
+    Engineering to design and build fully working professional level project 
+    with Alcatel.
+    My team and I successfully produced, presented and documented the Underwater
+    Telecom Network Branching Unit Demonstrator for use by Alcatel. 
+    I was awarded with the Crest Gold Award for this project.
+}
+
+\csproject{Web-based democratic shoutcast jukebox}{}{2004}
+{ 
+    Development of software in PHP 
+} 
+
+\csproject{Website Project}{}{2000 - 2006}
+{ 
+    Built, hosted and maintained successful website. 
+}
+
+\section{\bf{Technologies} }
+I have experience with the following languages and technologies;
+\begin{itemize}
+ \item C++
+ \item C
+ \item Linux ( Gentoo , Ubuntu , Arch Linux )
+ \item Python 
+ \item PHP
+ \item Drupal
+ \item BASH
+ \item DirectFB
+ \item Qt
+ \item VHDL
+ \item LDRA
+\end{itemize}
+
+\newpage
+
+\section{\bf{ Personal } }
+My passion for electronics, computing and just about anything to do with 
+technology, started at a young age. 
+I took apart and reconstructed anything that beeped or whirred to see how it
+worked. 
+Today, I remain insatiably curious about all aspects of technology. 
+
+From 2004 to 2005 I worked with Structuretone PLC, as a temporary IT 
+Co-ordinator and In house Developer. 
+My duties entail working both with their Head Office and International Clients, 
+planning, setting up and maintaining essential systems. 
+This has also given me experience and an insight into how technology is put to 
+use in a business environment outside a strictly engineering environment and its
+potential problems. 
+
+In the summer of 2007 I was employed in the set-top-box department at NXP 
+researching, developing and implementing a replacement testing GUI aimed at both
+engineers and potential clients. 
+This was particularly useful experience for one of my main interests embedded 
+computing and also helped develop my C/C++ skill, also furthering my experience 
+of innovative GUI design.
+
+I complete MEng Computer Engineering in July 2010. 
+This degree has given me extensive theoretical and practical knowledge over a 
+uniquely wide range of topics covering high level software design to low level 
+digital design and test. 
+It has also allowed me to get involved with interresting technologoical niches 
+such as evolutionary algorithms, bioinspired engineering and formal validation.
+
+After completing my degree I have begun work at Critical Software Technologies 
+Ltd where I have had chance to concentrate on the development of safety critical
+certified software and its verification. 
+This has given me unique experience of highly reliable and robust software that
+is developed on budget and on time. 
+During my time at Critical Software I have had experience with common software
+safety standards such as the DO-178B and its application in development. 
+I was also lucky enough to gain significant experience in independant validation
+and verification using LDRA. 
+
+While in my work I often use Windows based software, I have a preference towards
+Linux and the open source movement and prefer to use it in development.
+
+My main areas of interest are embedded, pervasive computing, biologically 
+inspired engineering, stigmergy and emergence. 
+I enjoy solving problems in new an innovative ways, and often look to design and
+experiment with new ideas in my own time.
+
+Outside of work I enjoy an eclectic collection of music, philosophy, reading and
+foreign film. 
+
+
+\begin{center}
+{\tiny \rm $ $Date: \today $ $ }
+\end{center}
+
+\end{resume}
+
+\end{document}
+
+%%===========================================================================%%
