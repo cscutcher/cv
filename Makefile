@@ -15,7 +15,7 @@ BASENAME = cv
 
 # Any supporting files needed to compile $(BASENAME).tex such as
 # included tex files or figures
-SUPPORTS = 
+SUPPORTS =
 
 # Other files that will be included in an archive
 OTHER_FILES =
@@ -52,6 +52,8 @@ WEBSITE_FILES = $(BASENAME).pdf cv-template.tar.gz \
 
 WEBSITE_PATH = /home/jrblevin/projects/web/duke/content/cv/
 
+GIT_REVISION = gitrevision.tex
+
 ###############################################################################
 # Build rules
 
@@ -66,14 +68,14 @@ $(BASENAME).aux: $(BASENAME).tex $(SUPPORTS) $(BIBFILE)
 $(BASENAME).bbl: $(BASENAME).tex $(BIBFILE) $(BASENAME).aux
 	$(BIBTEX) $(BASENAME).aux
 
-$(BASENAME).dvi: $(BASENAME).tex $(BASENAME).aux $(BBLFILE) $(BIBFILE)
+$(BASENAME).dvi: $(BASENAME).tex $(BASENAME).aux $(BBLFILE) $(BIBFILE) $(GIT_REVISION)
 	$(LATEX) $(LATEXFLAGS) $(BASENAME).tex
 	$(LATEX) $(LATEXFLAGS) $(BASENAME).tex
 
-$(BASENAME).ps: $(BASENAME).dvi
+$(BASENAME).ps: $(BASENAME).dvi $(GIT_REVISION)
 	$(DVIPS) $(BASENAME).dvi -o $@ $(DVIPSFLAGS)
 
-$(BASENAME).pdf: $(BASENAME).tex #$(BASENAME).aux $(BIBFILE) $(BBLFILE)
+$(BASENAME).pdf: $(BASENAME).tex #$(BASENAME).aux $(BIBFILE) $(BBLFILE) $(GIT_REVISION)
 	pdflatex -interaction=nonstopmode $(BASENAME).tex
 
 ###############################################################################
@@ -119,7 +121,7 @@ co: $(RCSFILES)
 # For archiving snapshots of the code (Moved to RCS, then CVS)
 SNAPFILES = Makefile *.tex $(BASENAME).ps $(BASENAME).pdf $(BASENAME).dvi
 
-snap: 
+snap:
 	-mkdir -p snapshots
 	-mkdir `date +%Y%m%d`
 	cp -R $(SNAPFILES) `date +%Y%m%d`
@@ -135,3 +137,6 @@ zip: $(ZIPFILES)
 	zip $(BASENAME).zip $(ZIPFILES)
 
 ###############################################################################
+
+$(GIT_REVISION):
+	git rev-parse HEAD > gitrevision.tex
