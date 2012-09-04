@@ -37,6 +37,7 @@ ACROREAD = acroread
 XDVI = xdvi
 GGV = ggv
 
+
 ###############################################################################
 # File lists
 
@@ -104,7 +105,6 @@ clean:
 distclean:
 	-rm -f $(DISTFILES)
 
-
 ###############################################################################
 # No longer used
 
@@ -138,5 +138,7 @@ zip: $(ZIPFILES)
 
 ###############################################################################
 
-$(GIT_REVISION):
+$(GIT_REVISION): FORCE
 	git rev-parse HEAD > gitrevision.tex
+
+FORCE:
