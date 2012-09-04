@@ -1,11 +1,3 @@
-# Makefile
-# $Id: Makefile,v 1.14 2006/12/12 22:55:50 jrblevin Exp $
-#
-# LaTeX Makefile for curriculum vitae template cv-us.tex
-#
-# Jason Blevins <jrblevin@sdf.lonestar.org>
-# Durham, December 12, 2006
-
 ###############################################################################
 # Configuration Section
 # This should be the only section you need to modify
@@ -46,13 +38,6 @@ CLEANFILES = $(DISTFILES) *.ps *.pdf *.zip *.tar.gz
 
 TEMPLATE_FILES = Makefile $(BASENAME).tex
 
-# Website
-
-WEBSITE_FILES = $(BASENAME).pdf cv-template.tar.gz \
-	$(OTHER_FILES) $(TEMPLATE_FILES)
-
-WEBSITE_PATH = /home/jrblevin/projects/web/duke/content/cv/
-
 GIT_REVISION = gitrevision.tex
 
 ###############################################################################
@@ -76,25 +61,8 @@ $(BASENAME).dvi: $(BASENAME).tex $(BASENAME).aux $(BBLFILE) $(BIBFILE) $(GIT_REV
 $(BASENAME).ps: $(BASENAME).dvi $(GIT_REVISION)
 	$(DVIPS) $(BASENAME).dvi -o $@ $(DVIPSFLAGS)
 
-$(BASENAME).pdf: $(BASENAME).tex #$(BASENAME).aux $(BIBFILE) $(BBLFILE) $(GIT_REVISION)
+$(BASENAME).pdf: $(BASENAME).tex $(GIT_REVISION) #$(BASENAME).aux $(BIBFILE) $(BBLFILE)
 	pdflatex -interaction=nonstopmode $(BASENAME).tex
-
-###############################################################################
-# Archive rules
-
-archive: cv-template.tar.gz
-
-cv-template.tar.gz: $(TEMPLATE_FILES)
-	-mkdir cv-template
-	cp $(TEMPLATE_FILES) cv-template
-	tar zcvf cv-template.tar.gz cv-template
-	-rm -rf cv-template
-
-###############################################################################
-# Website Rules
-
-website: $(WEBSITE_FILES)
-	cp -avf $(WEBSITE_FILES) $(WEBSITE_PATH)
 
 ###############################################################################
 # Clean-up rules
@@ -106,39 +74,10 @@ distclean:
 	-rm -f $(DISTFILES)
 
 ###############################################################################
-# No longer used
-
-# For RCS check-in and -out (Now under CVS control in a larger module)
-RCSFILES = $(BASENAME).tex $(SUPPORTS) Makefile $(OTHER_FILES) \
-	$(BASENAME).pdf $(BASENAME).ps cv-template.tar.gz
-
-ci: $(RCSFILES)
-	$(shell for i in $(RCSFILES) ; do ci -u $$i ; done)
-
-co: $(RCSFILES)
-	$(shell for i in $(RCSFILES) ; do co -l $$i ; done)
-
-# For archiving snapshots of the code (Moved to RCS, then CVS)
-SNAPFILES = Makefile *.tex $(BASENAME).ps $(BASENAME).pdf $(BASENAME).dvi
-
-snap:
-	-mkdir -p snapshots
-	-mkdir `date +%Y%m%d`
-	cp -R $(SNAPFILES) `date +%Y%m%d`
-	tar zcvf snapshots/$(BASENAME).`date +%Y%m%d`.tar.gz `date +%Y%m%d`
-	rm -rf `date +%Y%m%d`
-
-# Used to make a distributable zip file
-ZIPFILES = $(SUPPORTS) $(BASENAME).tex $(BIBFILE) $(BASENAME).ps \
-	$(BASENAME).pdf $(OTHER_FILES)
-
-zip: $(ZIPFILES)
-	-rm -f $(BASENAME).zip
-	zip $(BASENAME).zip $(ZIPFILES)
-
-###############################################################################
 
 $(GIT_REVISION): FORCE
-	git rev-parse HEAD > gitrevision.tex
+	git rev-parse HEAD > $(GIT_REVISION)
 
 FORCE:
+
+.PHONY: $(GIT_REVISION)
