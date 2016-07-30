@@ -1,0 +1,157 @@
+{
+  "basics": {
+    "name": "Chris Scutcher",
+    "label": "Programmer",
+    "picture": "",
+    "email": "chris.scutcher@ninebysix.co.uk",
+    "phone": "+44 7743 186526",
+    "website": "http://www.ninebysix.co.uk",
+    "summary": "Chris is a passionate engineer with an MEng in Computer Engineering. While his preferred environment is Linux and Python he is flexible and capable with a wide variety of skills. Outside work he enjoys a wide variety of eclectic music, geekery, video games, science and politics.",
+    "location": {
+      "address": "",
+      "postalCode": "",
+      "city": "Didcot",
+      "countryCode": "UK",
+      "region": "Oxfordshire"
+    },
+    "profiles": [
+      {
+        "network": "LinkedIn",
+        "username": "cscutcher",
+        "url": "https://uk.linkedin.com/in/cscutcher"
+      },
+      {
+        "network": "GitHub",
+        "username": "cscutcher",
+        "url": "https://github.com/cscutcher"
+      }
+    ]
+  },
+  "work": [
+    {
+      "company": "Cisco (formerly Tandberg)",
+      "position": "Software Engineer",
+      "website": "http://www.cisco.com",
+      "startDate": "2010-08-01",
+      "summary": "Responsible as developer and architect on a number of video conferencing products including VCS and Conductor. ",
+      "highlights": [
+        "Key architect on Conductor a product used to manage resources for large scale video conferences. Responsible for entire codebase from custom Linux platform, backend with heavy use of Python, Twisted and Erlang, and frontend in PHP and Javascript. (2010-2015)",
+        "Developer on VCS Expressway. This product combines the functions of SIP registrar, H323 gateways, provides Lync interopt and does firewall traversal amongst many other things aka Skype for grown ups. Responsible for entire codebase including custom Linux platform, backend using C++, Python, Twisted and Erlang, and frontend code written in PHP and Javascript.",
+        "Modernised CI system from SVN to BitBucket based Git with DSL based jobs with Jenkins 2.0 using OpenStack and Docker extensively.",
+        "Working in small scrum team in a larger team using pair programming and a number of other agile techniques."
+      ]
+    },
+    {
+        "company": "Critical Software Technologies Ltd",
+        "position": "Software Engineer",
+        "website": "http://www.criticalsoftware.com/",
+        "startDate": "2008-07-01",
+        "endDate": "2010-08-01",
+        "summary": "Software Engineer developing and validating safety critical software for the aerospace, transport and defense industries.",
+        "highlights": [
+            "Project lead on SHARE project to facilitate open source software code sharing and utilisation within the embedded system domain, creating a nurturing environment for applications and solutions. SHARE is an international project made up of a consortium of companies.",
+            "Project lead on project to develop open source toolchain for development of certified DO-178B safety critical software. This work in part lead to developing a Django based tool which interacts with LDRA and other tools.",
+            "Validation and verification for C software running on embedded target for DO-178B using LDRA."
+        ]
+    },
+    {
+        "company": "Electron Dynamics",
+        "position": "Software Engineer",
+        "website": "http://www.electrondynamics.co.uk/",
+        "startDate": "2008-01-01",
+        "endDate": "2008-06-01",
+        "summary": "Drupal based dynamic website development."
+    },
+    {
+        "company": "NXP",
+        "position": "Software Engineer",
+        "website": "http://www.nxp.com/",
+        "startDate": "2007-06-01",
+        "endDate": "2007-10-01",
+        "summary": "Development and implementation of innovative embedded GUI for IP-TV using DirectFB, C, C++ on a Linux platform."
+    }
+  ],
+  "education": [
+    {
+      "institution": "University of Southampton",
+      "area": "MEng Computer Engineering",
+      "studyType": "Masters 2:1",
+      "startDate": "2004-01-01",
+      "endDate": "2010-01-01",
+      "courses": [
+        "Evolution of Complexity",
+        "Advanced Computer Architecture",
+        "Digital System Design",
+        "Advanced Computer Networks",
+        "Real-Time Computing and Embedded Systems",
+        "Biologically Inspired Robotics"
+      ]
+    }
+  ],
+  "skills": [
+    {
+      "name": "Python",
+      "level": "Master",
+      "keywords": [
+        "Twisted",
+        "Asyncronous Code",
+        "Zope",
+        "Backend development",
+        "Django"
+      ]
+    },
+    {
+      "name": "Linux based Development",
+      "level": "Master",
+      "keywords": [
+        "Ubuntu, Debian, Arch",
+        "Git",
+        "Open-Source",
+        "Jenkins"
+      ]
+    },
+    {
+        "name": "Misc relevant technologies",
+        "level": "Strong",
+        "keywords": [
+            "Docker",
+            "C++",
+            "Erlang",
+            "LUA"
+        ]
+    }
+  ],
+  "interests": [
+    {
+        "name": "Professional",
+        "keywords": [
+            "Bioinspired Engineering",
+            "Collaboration/Telepresence",
+            "Open-Source",
+            "Emergent Systems"
+        ]
+    },
+    {
+        "name": "Personal",
+        "keywords": [
+            "Music",
+            "Video Games",
+            "Politics"
+        ]
+    },
+    {
+      "name": "Causes",
+      "keywords": [
+        "Animal Welfare",
+        "Human Rights",
+        "Promotion of Science and Technology"
+      ]
+    }
+  ],
+  "references": [
+    {
+      "name": "Simon Kampa (CEO at Senseye)",
+      "reference": "Chris is very positive, creative, lively and hard working engineer who will always help get the most out of a team. He is intelligent and will often have a unique angle on a problem. Chris is also very willing to learn and is always seeking for ways to improve. I have no hesitation in recommending Chris."
+    }
+  ]
+}
