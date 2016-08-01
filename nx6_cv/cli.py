@@ -20,7 +20,7 @@ APP = argh.EntryPoint()
 
 
 @APP
-def build_latex_pdf(output_filename):
+def build_latex_pdf(output_filename="cscutcher_cv_latex.pdf"):
     """Build latex style pdf."""
     resume = nx6_cv.resume.get_resume()
 
@@ -54,3 +54,23 @@ def build_latex_pdf(output_filename):
 
         sh.make("-C", str(tmpdir.resolve()))
         output_stream.write((tmpdir / 'cv.pdf').open('rb').read())
+
+
+@APP
+def build_html(output_filename="cscutcher_cv.html", theme="kendall"):
+    """Build html style pdf."""
+    sh.resume.export(output_filename, format="html", theme=theme)
+
+
+@APP
+def build_pdf(output_filename="cscutcher_cv.pdf", theme="modern"):
+    """Build html style pdf."""
+    sh.resume.export(output_filename, format="pdf", theme=theme)
+
+
+@APP
+def build():
+    """Build all CV styles."""
+    build_latex_pdf()
+    build_html()
+    build_pdf()
