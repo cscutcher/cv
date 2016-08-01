@@ -2,7 +2,6 @@
 """CLI for building CV."""
 from pathlib import Path
 import re
-import json
 import logging
 import os.path
 import tempfile
@@ -12,13 +11,9 @@ import mako.template
 import pkg_resources
 import sh
 
+import nx6_cv.resume
+
 DEV_LOGGER = logging.getLogger(__name__)
-
-
-def get_resume():
-    """Get resume data from json."""
-    return json.loads(
-        pkg_resources.resource_string(__name__, "resume.json").decode("UTF8"))
 
 
 APP = argh.EntryPoint()
@@ -27,7 +22,8 @@ APP = argh.EntryPoint()
 @APP
 def build_latex_pdf(output_filename):
     """Build latex style pdf."""
-    resume = get_resume()
+    resume = nx6_cv.resume.get_resume()
+
     output_stream = Path(output_filename).open('wb')
 
     with tempfile.TemporaryDirectory(prefix="nx6_cv_latex_") as tmpdir:

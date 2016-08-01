@@ -9,6 +9,7 @@ setup(
         'argh',
         'sh',
         'mako',
+        'dateparser',
     ],
     entry_points={
         'console_scripts': [
@@ -17,6 +18,7 @@ setup(
     },
     package_data={
         'nx6_cv': [
+            'resume_schema.json',
             'resume.json',
             'latex/*',
         ],

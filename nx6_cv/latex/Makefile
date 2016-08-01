@@ -73,11 +73,3 @@ clean:
 distclean:
 	-rm -f $(DISTFILES)
 
-###############################################################################
-
-$(GIT_REVISION): FORCE
-	git rev-parse HEAD > $(GIT_REVISION)
-
-FORCE:
-
-.PHONY: $(GIT_REVISION)
