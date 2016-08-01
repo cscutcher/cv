@@ -6,7 +6,7 @@
     "email": "chris.scutcher@ninebysix.co.uk",
     "phone": "+44 7743 186526",
     "website": "http://www.ninebysix.co.uk",
-    "summary": "Chris is a passionate engineer with an MEng in Computer Engineering. While his preferred environment is Linux and Python he is flexible and capable with a wide variety of skills. Outside work he enjoys a wide variety of eclectic music, geekery, video games, science and politics.",
+    "summary": "Chris is a passionate engineer with an MEng in Computer Engineering. While his preferred environment is Linux and Python, he is very flexible with a wide variety of skills. Outside of work he enjoys a wide variety of eclectic music, geekery, video games, science and politics.",
     "location": {
       "address": "",
       "postalCode": "",
@@ -33,12 +33,12 @@
       "position": "Software Engineer",
       "website": "http://www.cisco.com",
       "startDate": "2010-08-01",
-      "summary": "Responsible as developer and architect on a number of video conferencing products including VCS and Conductor. ",
+      "summary": "Responsible as developer and architect on a number of video conferencing products including VCS and Conductor.",
       "highlights": [
-        "Key architect on Conductor a product used to manage resources for large scale video conferences. Responsible for entire codebase from custom Linux platform, backend with heavy use of Python, Twisted and Erlang, and frontend in PHP and Javascript. (2010-2015)",
+        "Key architect on Conductor, a product used to manage resources for large scale video conferences. Responsible for entire codebase from custom Linux platform, backend with heavy use of Python, Twisted and Erlang, and frontend in PHP and Javascript. (2010-2015)",
         "Developer on VCS Expressway. This product combines the functions of SIP registrar, H323 gateways, provides Lync interopt and does firewall traversal amongst many other things aka Skype for grown ups. Responsible for entire codebase including custom Linux platform, backend using C++, Python, Twisted and Erlang, and frontend code written in PHP and Javascript.",
         "Modernised CI system from SVN to BitBucket based Git with DSL based jobs with Jenkins 2.0 using OpenStack and Docker extensively.",
-        "Working in small scrum team in a larger team using pair programming and a number of other agile techniques."
+        "Working in small scrum team in a larger group using pair programming and a number of other agile techniques."
       ]
     },
     {
@@ -94,7 +94,7 @@
       "level": "Master",
       "keywords": [
         "Twisted",
-        "Asyncronous Code",
+        "Asynchronous Code",
         "Zope",
         "Backend development",
         "Django"
