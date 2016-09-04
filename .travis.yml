@@ -17,5 +17,6 @@ script:
 - git fetch git@github.com:cscutcher/cv.git gh-pages && git checkout -b gh-pages FETCH_HEAD 
 - nx6-cv build -o ""
 - html-pdf cv.html cv_web.pdf
-- git commit -m "Updating CV" -a
-- git push git@github.com:cscutcher/cv.git gh-pages
+- git add *.html *.pdf
+- git commit -m "Updating CV after commit $TRAVIS_COMMIT on $TRAVIS_BRANCH" -a
+- if [[ "$TRAVIS_BRANCH" == "master" ]]; then git push git@github.com:cscutcher/cv.git gh-pages; fi
