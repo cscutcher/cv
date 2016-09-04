@@ -8,5 +8,5 @@ before_install:
 - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - npm install -g resume-cli
 script:
-- pushd nx6_cv && python setup.py install && popd
+- pip install nx6_cv
 - git checkout -b gh-pages origin/gh-pages && nx6-cv build -o "" && git commit -m "Updating CV" -a && git push origin gh-pages
