@@ -8,9 +8,14 @@ before_install:
 - chmod 600 ~/.ssh/id_rsa
 - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
 - npm install -g resume-cli
+- npm install -g html-pdf
 - sudo apt-get install texlive-full
 - git config user.name "Travis CI"
 - git config user.email "travis-ci@ninebysix.co.uk"
 script:
 - pip install .
-- git fetch git@github.com:cscutcher/cv.git gh-pages && git checkout -b gh-pages FETCH_HEAD && nx6-cv build -o "" && git commit -m "Updating CV" -a && git push git@github.com:cscutcher/cv.git gh-pages
+- git fetch git@github.com:cscutcher/cv.git gh-pages && git checkout -b gh-pages FETCH_HEAD 
+- nx6-cv build -o ""
+- html-pdf cv.html cv_web.pdf
+- git commit -m "Updating CV" -a
+- git push git@github.com:cscutcher/cv.git gh-pages
