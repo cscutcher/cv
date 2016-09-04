@@ -74,6 +74,7 @@ def build_resume(output_filename, theme, format):
 
     (resume_path / output_filename).rename(Path.cwd() / output_filename)
 
+
 @APP
 def build_html(output_filename="cscutcher_cv.html", theme="kendall"):
     """Build html style pdf."""
@@ -87,8 +88,19 @@ def build_pdf(output_filename="cscutcher_cv.pdf", theme="modern"):
 
 
 @APP
+def build_json(output_filename="cscutcher_cv.json"):
+    """Copy json to output"""
+    resume_path = Path(
+        pkg_resources.resource_filename(__name__, "resume.json"))
+    copy_path = Path.cwd() / output_filename
+
+    copy_path.open('w').write(resume_path.open().read())
+
+
+@APP
 def build(output_filename_prefix="cscutcher_"):
     """Build all CV styles."""
     build_latex_pdf(output_filename=output_filename_prefix + "cv_latex.pdf")
     build_html(output_filename=output_filename_prefix + "cv.html")
     build_pdf(output_filename=output_filename_prefix + "cv.pdf")
+    build_json(output_filename=output_filename_prefix + "cv.json")
