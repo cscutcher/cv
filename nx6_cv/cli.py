@@ -56,21 +56,39 @@ def build_latex_pdf(output_filename="cscutcher_cv_latex.pdf"):
         output_stream.write((tmpdir / 'cv.pdf').open('rb').read())
 
 
+def build_resume(output_filename, theme, format):
+    """Helper to build resume with 'resume' tool"""
+    resume_path = Path(
+        pkg_resources.resource_filename(__name__, "resume.json")).parent
+
+    orig_path = os.getcwd()
+    os.chdir(str(resume_path))
+
+    print(sh.resume.export(
+        output_filename,
+        format=format,
+        theme=theme,
+    ))
+
+    os.chdir(orig_path)
+
+    (resume_path / output_filename).rename(Path.cwd() / output_filename)
+
 @APP
 def build_html(output_filename="cscutcher_cv.html", theme="kendall"):
     """Build html style pdf."""
-    sh.resume.export(output_filename, format="html", theme=theme)
+    build_resume(output_filename=output_filename, theme=theme, format='html')
 
 
 @APP
 def build_pdf(output_filename="cscutcher_cv.pdf", theme="modern"):
     """Build html style pdf."""
-    sh.resume.export(output_filename, format="pdf", theme=theme)
+    build_resume(output_filename=output_filename, theme=theme, format='pdf')
 
 
 @APP
-def build():
+def build(output_filename_prefix="cscutcher_"):
     """Build all CV styles."""
-    build_latex_pdf()
-    build_html()
-    build_pdf()
+    build_latex_pdf(output_filename=output_filename_prefix + "cv_latex.pdf")
+    build_html(output_filename=output_filename_prefix + "cv.html")
+    build_pdf(output_filename=output_filename_prefix + "cv.pdf")
