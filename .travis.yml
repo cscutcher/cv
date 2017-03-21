@@ -7,7 +7,7 @@ before_install:
 - cp travis_ssh_key_new ~/.ssh/id_rsa
 - chmod 600 ~/.ssh/id_rsa
 - echo -e "Host github.com\n\tStrictHostKeyChecking no\n" >> ~/.ssh/config
-- npm install -g resume-cli
+- npm install -g git+https://github.com/jsonresume/resume-cli.git#0.4.14
 - npm install -g html-pdf
 - sudo apt-get install texlive-full
 - git config user.name "Travis CI"
